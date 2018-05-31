@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="QingJiaPushMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="agentid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="send_class" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="send_type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QingJiaPushMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QingJiaPushMessageResult" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Error">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="errcode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="errmsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FangKePushMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="agentid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="send_class" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="send_type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FangKePushMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FangKePushMessageResult" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="QingJiaPushMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:QingJiaPushMessage" />
+  </wsdl:message>
+  <wsdl:message name="QingJiaPushMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:QingJiaPushMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="FangKePushMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:FangKePushMessage" />
+  </wsdl:message>
+  <wsdl:message name="FangKePushMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:FangKePushMessageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SendMessageServiceSoap">
+    <wsdl:operation name="QingJiaPushMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">推送信息给指定的标签用户</wsdl:documentation>
+      <wsdl:input message="tns:QingJiaPushMessageSoapIn" />
+      <wsdl:output message="tns:QingJiaPushMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FangKePushMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">推送信息给指定的标签用户</wsdl:documentation>
+      <wsdl:input message="tns:FangKePushMessageSoapIn" />
+      <wsdl:output message="tns:FangKePushMessageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SendMessageServiceSoap" type="tns:SendMessageServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QingJiaPushMessage">
+      <soap:operation soapAction="http://tempuri.org/QingJiaPushMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FangKePushMessage">
+      <soap:operation soapAction="http://tempuri.org/FangKePushMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendMessageServiceSoap12" type="tns:SendMessageServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QingJiaPushMessage">
+      <soap12:operation soapAction="http://tempuri.org/QingJiaPushMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FangKePushMessage">
+      <soap12:operation soapAction="http://tempuri.org/FangKePushMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SendMessageService">
+    <wsdl:port name="SendMessageServiceSoap" binding="tns:SendMessageServiceSoap">
+      <soap:address location="http://127.0.0.5/SendMessageService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SendMessageServiceSoap12" binding="tns:SendMessageServiceSoap12">
+      <soap12:address location="http://127.0.0.5/SendMessageService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,84 @@
+﻿@model wx_site_micc.Models.HVS010TB
+@{
+    /**/
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>访客申请查询</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <hr />
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h4 class="panel-title">访客申请</h4>
+            </div>
+            <form id="form1" action="@Url.Action("Check")@HttpUtility.UrlDecode("?id=")@Request.QueryString["id"]" method="post">
+                <div class="panel-body">
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-3 col-xs-4 text-right">访客姓名</td>
+                                <td class="col-md-9 col-xs-8 text-left">@Model.vs_nm</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">访客公司</td>
+                                <td class="text-left">@Model.vs_company</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">来访人数</td>
+                                <td class="text-left">@Model.vs_count</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">访问日期</td>
+                                <td class="text-left">@Model.vs_date</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">访问时间</td>
+                                <td class="text-left">@Model.vs_time</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">车辆号码</td>
+                                <td class="text-left">@Model.car_no</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">到访事由</td>
+                                <td class="text-left">@Model.vs_note</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">被访者姓名</td>
+                                <td class="text-left">@Model.emp_nm</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">被访者部门</td>
+                                <td class="text-left">@Model.dept_nm</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right ">被访者职位</td>
+                                <td class="text-left">@Model.emp_zw</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">审核状态</td>
+                                <td class="text-left">@Model.ck_state</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

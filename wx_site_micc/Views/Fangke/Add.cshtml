@@ -1,0 +1,160 @@
+﻿@model wx_site_micc.Models.Message
+@{
+                /**/
+
+                /**/
+
+                Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>访客预约</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script src="~/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link href="~/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <hr />
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h4 class="panel-title">请填写以下访客预约登记信息</h4>
+            </div>
+            <form id="form1" action="@Url.Action("add")@HttpUtility.UrlDecode("?id=")@Model.Msg_cd" method="post">
+                <div class="panel-body">
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-2 col-xs-3 text-right">被访者姓名</td>
+                                <td class="text-left">
+                                    <div class=" col-md-4 col-xs-12">
+                                        <input type="text" class="form-control" name="emp_nm" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">来访者姓名</td>
+                                <td class="text-left">
+                                    <div class=" col-md-4 col-xs-12">
+                                        <input type="text" class="form-control" name="vs_nm" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">来访者公司</td>
+                                <td class="text-left">
+                                    <div class=" col-md-4 col-xs-12">
+                                        <input type="text" class="form-control" name="vs_company" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">来访人数</td>
+                                <td class="text-left">
+                                    <div class=" col-md-4 col-xs-12">
+                                        <input type="text" class="form-control" name="vs_count" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right ">来访日期</td>
+                                <td class="text-left">
+                                    <div class="col-md-4 col-xs-12">
+                                        <input type="text" class="form-control" name="vs_date" id="datetimepicker" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">开始时间</td>
+                                <td class="text-left">
+                                    <div class=" col-md-4 col-xs-12">
+                                        <input type="text" class="form-control" id="datetimepicker_fr" name="vs_btime">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">车牌号码</td>
+                                <td class="text-left">
+                                    <div class=" col-md-4 col-xs-12">
+                                        <input type="text" class="form-control" name="car_no" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right ">来访事由</td>
+                                <td class="text-left">
+                                    <div class=" col-md-4 col-xs-12">
+                                        <input type="text" class="form-control" name="vs_note" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-right "></td>
+                                <td class="text-left">
+                                    @if (Model.Msg_cd == "Y")
+                                    {
+                                        <div id="myAlert" class="alert alert-success show">
+                                            <a href="#" class="close" data-dismiss="alert"></a>
+                                            <strong>@Model.Msg_text</strong>
+                                        </div>
+                                    }
+                                    else if (Model.Msg_cd == "N")
+                                    {
+                                        <div id="myAlert" class="alert alert-warning show">
+                                            <a href="#" class="close" data-dismiss="alert"></a>
+                                            <strong>@Model.Msg_text</strong>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div id="myAlert" class="alert alert-warning hidden">
+                                            <a href="#" class="close" data-dismiss="alert"></a>
+                                            <strong>@Model.Msg_text</strong>
+                                        </div>
+                                    }
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="submit" class="btn btn-info col-md-3 col-xs-3">提 交</button>
+                    <div class="col-md-6 col-xs-6"></div>
+                    <button type="reset" class="btn btn-info col-md-3 col-xs-3">重 置</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker_fr').datetimepicker({
+                format: 'hh:ii',
+                startView: 1,
+                language: 'zh-CN', //汉化
+                autoclose: true //选择日期后自动关闭
+            });
+            $('#datetimepicker_to').datetimepicker({
+                format: 'hh:ii',
+                startView: 1,
+                language: 'zh-CN', //汉化
+                autoclose: true //选择日期后自动关闭
+            });
+            $('#datetimepicker').datetimepicker({
+                minView: "month", //选择日期后，不会再跳转去选择时分秒
+                format: "yyyy-mm-dd", //选择日期后，文本框显示的日期格式
+                language: 'zh-CN', //汉化
+                autoclose: true //选择日期后自动关闭
+            });
+        });
+    </script>
+</body>
+
+</html>

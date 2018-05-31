@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddHVS010TB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hvs010tb" type="tns:HVS010TB" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HVS010TB">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="emp_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="emp_nm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="emp_zw" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dept_nm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vs_nm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vs_company" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="vs_count" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="url_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vs_date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vs_btime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vs_etime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vs_note" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="use_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="use_ip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="car_no" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddHVS010TBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddHVS010TBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchHVS010TB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hvs010tb" type="tns:HVS010TB" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchHVS010TBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchHVS010TBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckHVS010TB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hvs010tb" type="tns:HVS010TB" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckHVS010TBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckHVS010TBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddHVS010TBSoapIn">
+    <wsdl:part name="parameters" element="tns:AddHVS010TB" />
+  </wsdl:message>
+  <wsdl:message name="AddHVS010TBSoapOut">
+    <wsdl:part name="parameters" element="tns:AddHVS010TBResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchHVS010TBSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchHVS010TB" />
+  </wsdl:message>
+  <wsdl:message name="SearchHVS010TBSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchHVS010TBResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckHVS010TBSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckHVS010TB" />
+  </wsdl:message>
+  <wsdl:message name="CheckHVS010TBSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckHVS010TBResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FangkeServiceSoap">
+    <wsdl:operation name="AddHVS010TB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">访客登记信息保存</wsdl:documentation>
+      <wsdl:input message="tns:AddHVS010TBSoapIn" />
+      <wsdl:output message="tns:AddHVS010TBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchHVS010TB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">访客登记信息查询</wsdl:documentation>
+      <wsdl:input message="tns:SearchHVS010TBSoapIn" />
+      <wsdl:output message="tns:SearchHVS010TBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckHVS010TB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">访客信息审核</wsdl:documentation>
+      <wsdl:input message="tns:CheckHVS010TBSoapIn" />
+      <wsdl:output message="tns:CheckHVS010TBSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FangkeServiceSoap" type="tns:FangkeServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddHVS010TB">
+      <soap:operation soapAction="http://tempuri.org/AddHVS010TB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchHVS010TB">
+      <soap:operation soapAction="http://tempuri.org/SearchHVS010TB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHVS010TB">
+      <soap:operation soapAction="http://tempuri.org/CheckHVS010TB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FangkeServiceSoap12" type="tns:FangkeServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddHVS010TB">
+      <soap12:operation soapAction="http://tempuri.org/AddHVS010TB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchHVS010TB">
+      <soap12:operation soapAction="http://tempuri.org/SearchHVS010TB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHVS010TB">
+      <soap12:operation soapAction="http://tempuri.org/CheckHVS010TB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FangkeService">
+    <wsdl:port name="FangkeServiceSoap" binding="tns:FangkeServiceSoap">
+      <soap:address location="http://wxservice.sungteuk.com:88/micc/FangkeService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FangkeServiceSoap12" binding="tns:FangkeServiceSoap12">
+      <soap12:address location="http://wxservice.sungteuk.com:88/micc/FangkeService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

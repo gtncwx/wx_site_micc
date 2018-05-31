@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SearchUserinfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchUserinfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchUserinfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchMonth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="month" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchMonthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchMonthResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Qrkq">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emp_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyyymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QrkqResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QrkqResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchKaoqin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="month" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchKaoqinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchKaoqinResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchGongzi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="month" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchGongziResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchGongziResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHEX001TB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hex001tb" type="tns:HEX001TB" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HEX001TB">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="emp_no" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ex_date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="dilig_cd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ex_btime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ex_etime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ex_remark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ck_flg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ck_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ck_remark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ck_ip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ins_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ins_ip" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddHEX001TBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddHEX001TBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckHEX001TB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hex001tb" type="tns:HEX001TB" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckHEX001TBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckHEX001TBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchHEX001TB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hex001tb" type="tns:HEX001TB" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchHEX001TBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchHEX001TBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHEX001TB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hex001tb" type="tns:HEX001TB" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHEX001TBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteHEX001TBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserCheckResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Change_pwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Change_pwdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Change_pwdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SearchUserinfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchUserinfo" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserinfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchUserinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchMonthSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchMonth" />
+  </wsdl:message>
+  <wsdl:message name="SearchMonthSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="QrkqSoapIn">
+    <wsdl:part name="parameters" element="tns:Qrkq" />
+  </wsdl:message>
+  <wsdl:message name="QrkqSoapOut">
+    <wsdl:part name="parameters" element="tns:QrkqResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchKaoqinSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchKaoqin" />
+  </wsdl:message>
+  <wsdl:message name="SearchKaoqinSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchKaoqinResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchGongziSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchGongzi" />
+  </wsdl:message>
+  <wsdl:message name="SearchGongziSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchGongziResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddHEX001TBSoapIn">
+    <wsdl:part name="parameters" element="tns:AddHEX001TB" />
+  </wsdl:message>
+  <wsdl:message name="AddHEX001TBSoapOut">
+    <wsdl:part name="parameters" element="tns:AddHEX001TBResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckHEX001TBSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckHEX001TB" />
+  </wsdl:message>
+  <wsdl:message name="CheckHEX001TBSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckHEX001TBResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchHEX001TBSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchHEX001TB" />
+  </wsdl:message>
+  <wsdl:message name="SearchHEX001TBSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchHEX001TBResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHEX001TBSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteHEX001TB" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHEX001TBSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteHEX001TBResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCheck" />
+  </wsdl:message>
+  <wsdl:message name="UserCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="Change_pwdSoapIn">
+    <wsdl:part name="parameters" element="tns:Change_pwd" />
+  </wsdl:message>
+  <wsdl:message name="Change_pwdSoapOut">
+    <wsdl:part name="parameters" element="tns:Change_pwdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RenshiServiceSoap">
+    <wsdl:operation name="SearchUserinfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户信息查询</wsdl:documentation>
+      <wsdl:input message="tns:SearchUserinfoSoapIn" />
+      <wsdl:output message="tns:SearchUserinfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMonth">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询可以查看考勤的月份信息，在允许查询的范围内的就是可以查询到的</wsdl:documentation>
+      <wsdl:input message="tns:SearchMonthSoapIn" />
+      <wsdl:output message="tns:SearchMonthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Qrkq">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户确认考勤信息</wsdl:documentation>
+      <wsdl:input message="tns:QrkqSoapIn" />
+      <wsdl:output message="tns:QrkqSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchKaoqin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户考勤查询，包括刷卡时间（显示加班信息），请假信息，异常出勤信息</wsdl:documentation>
+      <wsdl:input message="tns:SearchKaoqinSoapIn" />
+      <wsdl:output message="tns:SearchKaoqinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchGongzi">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户工资查询，包括工资支付项目，扣除项目，合计项目和实付金额</wsdl:documentation>
+      <wsdl:input message="tns:SearchGongziSoapIn" />
+      <wsdl:output message="tns:SearchGongziSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHEX001TB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">职员自助请假申请保存</wsdl:documentation>
+      <wsdl:input message="tns:AddHEX001TBSoapIn" />
+      <wsdl:output message="tns:AddHEX001TBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckHEX001TB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">职员自助请假申请的审核操作</wsdl:documentation>
+      <wsdl:input message="tns:CheckHEX001TBSoapIn" />
+      <wsdl:output message="tns:CheckHEX001TBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchHEX001TB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询请假申请，用于审核或者审核通过后的查询</wsdl:documentation>
+      <wsdl:input message="tns:SearchHEX001TBSoapIn" />
+      <wsdl:output message="tns:SearchHEX001TBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHEX001TB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除请假申请</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHEX001TBSoapIn" />
+      <wsdl:output message="tns:DeleteHEX001TBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCheck">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询工资前输入密码进行验证</wsdl:documentation>
+      <wsdl:input message="tns:UserCheckSoapIn" />
+      <wsdl:output message="tns:UserCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Change_pwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改密码</wsdl:documentation>
+      <wsdl:input message="tns:Change_pwdSoapIn" />
+      <wsdl:output message="tns:Change_pwdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RenshiServiceSoap" type="tns:RenshiServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchUserinfo">
+      <soap:operation soapAction="http://tempuri.org/SearchUserinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMonth">
+      <soap:operation soapAction="http://tempuri.org/SearchMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Qrkq">
+      <soap:operation soapAction="http://tempuri.org/Qrkq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchKaoqin">
+      <soap:operation soapAction="http://tempuri.org/SearchKaoqin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGongzi">
+      <soap:operation soapAction="http://tempuri.org/SearchGongzi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHEX001TB">
+      <soap:operation soapAction="http://tempuri.org/AddHEX001TB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHEX001TB">
+      <soap:operation soapAction="http://tempuri.org/CheckHEX001TB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchHEX001TB">
+      <soap:operation soapAction="http://tempuri.org/SearchHEX001TB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHEX001TB">
+      <soap:operation soapAction="http://tempuri.org/DeleteHEX001TB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCheck">
+      <soap:operation soapAction="http://tempuri.org/UserCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Change_pwd">
+      <soap:operation soapAction="http://tempuri.org/Change_pwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RenshiServiceSoap12" type="tns:RenshiServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchUserinfo">
+      <soap12:operation soapAction="http://tempuri.org/SearchUserinfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMonth">
+      <soap12:operation soapAction="http://tempuri.org/SearchMonth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Qrkq">
+      <soap12:operation soapAction="http://tempuri.org/Qrkq" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchKaoqin">
+      <soap12:operation soapAction="http://tempuri.org/SearchKaoqin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGongzi">
+      <soap12:operation soapAction="http://tempuri.org/SearchGongzi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHEX001TB">
+      <soap12:operation soapAction="http://tempuri.org/AddHEX001TB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHEX001TB">
+      <soap12:operation soapAction="http://tempuri.org/CheckHEX001TB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchHEX001TB">
+      <soap12:operation soapAction="http://tempuri.org/SearchHEX001TB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHEX001TB">
+      <soap12:operation soapAction="http://tempuri.org/DeleteHEX001TB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCheck">
+      <soap12:operation soapAction="http://tempuri.org/UserCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Change_pwd">
+      <soap12:operation soapAction="http://tempuri.org/Change_pwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RenshiService">
+    <wsdl:port name="RenshiServiceSoap" binding="tns:RenshiServiceSoap">
+      <soap:address location="http://127.0.0.5/RenshiService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RenshiServiceSoap12" binding="tns:RenshiServiceSoap12">
+      <soap12:address location="http://127.0.0.5/RenshiService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
